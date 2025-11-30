@@ -5,22 +5,29 @@ def diamante_hueco():
         print("Introduce un numero valido")
         exit()
 
-    # La altura y anchura total es 2n - 1
-    tamano = 2 * n - 1
-    centro = n - 1
+    # Mitad superior
+    for i in range(1, n + 1):
+        # Espacios a la izquierda (igual que en el sólido)
+        espacios_iniciales = " " * (n - i)
+        
+        if i == 1:
+            # La primera punta es solo un asterisco
+            print(espacios_iniciales + "*")
+        else:
+            # Filas intermedias: asterisco + hueco + asterisco
+            # El hueco se calcula restando los 2 asteriscos del ancho total (2*i - 1)
+            # Ancho total - 2 = (2*i - 1) - 2 = 2*i - 3
+            espacios_huecos = " " * ((2 * i - 1) - 2)
+            print(espacios_iniciales + "*" + espacios_huecos + "*")
 
-    for i in range(tamano):
-        linea = ""
-        for j in range(tamano):
-            # Calculamos la distancia Manhattan desde el centro
-            distancia = abs(i - centro) + abs(j - centro)
-            
-            # Imprimimos asterisco si estamos en el borde (distancia == n-1)
-            # o si estamos en el centro exacto (distancia == 0)
-            if distancia == n - 1:
-                linea += "*"
-            else:
-                linea += " "
-        print(linea)
+    # Mitad inferior (espejo de la superior, sin repetir la fila central)
+    for i in range(n - 1, 0, -1):
+        espacios_iniciales = " " * (n - i)
+        
+        if i == 1:
+            print(espacios_iniciales + "*")
+        else:
+            espacios_huecos = " " * ((2 * i - 1) - 2)
+            print(espacios_iniciales + "*" + espacios_huecos + "*")
 
 diamante_hueco()
