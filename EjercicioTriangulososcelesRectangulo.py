@@ -27,5 +27,4 @@ def dibujar_flecha_hueca():
             espacios_hueco = " " * (2 * i - 3)
             print(espacios_izq + "*" + espacios_hueco + "*")
 
-if __name__ == "__main__":
-    dibujar_flecha_hueca()
+dibujar_flecha_hueca()
