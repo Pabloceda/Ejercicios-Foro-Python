@@ -10,8 +10,6 @@ def piramide_reja():
             print(espacios_iniciales + "*")
         elif i == n:
             print(espacios_iniciales + "*" * (2 * i - 1))
-        elif i == ((n // 2) + 1):
-            print(espacios_iniciales + "*" * (2 * i - 1))
         else:
             espacios_huecos = " " * ((2 * i - 1) - 2)
             print(espacios_iniciales + "*" + espacios_huecos + "*")

@@ -15,7 +15,7 @@ def dibujar_flecha_hueca():
         if i == 1:
             print(espacios_izq + "*")
         else:
-            espacios_hueco = " " * (2 * i - 3)
+            espacios_hueco = " " * ((2 * i - 2) - 1)
             print(espacios_izq + "*" + espacios_hueco + "*")
 
     for i in range(n - 1, 0, -1):
@@ -24,7 +24,7 @@ def dibujar_flecha_hueca():
         if i == 1:
             print(espacios_izq + "*")
         else:
-            espacios_hueco = " " * (2 * i - 3)
+            espacios_hueco = " " * ((2 * i - 2) - 1)
             print(espacios_izq + "*" + espacios_hueco + "*")
 
 dibujar_flecha_hueca()
